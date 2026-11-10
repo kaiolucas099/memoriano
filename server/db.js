@@ -15,6 +15,12 @@ export function createDatabase(filename = process.env.DB_FILE || './data/memoria
       password_hash TEXT NOT NULL,
       created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
+    CREATE TABLE IF NOT EXISTS sessions (
+      sid TEXT PRIMARY KEY,
+      sess TEXT NOT NULL,
+      expired_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS sessions_expired_at_idx ON sessions(expired_at);
   `);
   return db;
 }
