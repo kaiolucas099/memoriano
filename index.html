@@ -12,7 +12,7 @@
     header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#ff2735,#85000d);font-size:25px;box-shadow:0 8px 30px #ff152d55;overflow:hidden}.brand h1{font:700 25px 'Space Grotesk',sans-serif;margin:0;letter-spacing:-1px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.top-tag{border:1px solid #8f2730;background:linear-gradient(110deg,#24080d,#4c0710);color:#ffe5e7;border-radius:999px;padding:9px 13px;font-size:12px}
     .intro{text-align:center;margin:24px 0 25px}.eyebrow{color:var(--cyan);font-weight:800;font-size:11px;letter-spacing:2px;text-transform:uppercase}.intro h2{font:700 clamp(28px,5vw,43px) 'Space Grotesk',sans-serif;letter-spacing:-1.7px;margin:9px 0}.intro p{color:var(--muted);margin:0;font-size:14px}
     .layout{display:grid;grid-template-columns:1fr 280px;gap:18px;align-items:start}.game-panel,.side-panel{background:linear-gradient(145deg,#191216f2,#0e0b0df2);border:1px solid #64232b;border-radius:22px;box-shadow:0 20px 60px #0003}.game-panel{padding:20px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}.stat{background:#100c0fa8;border:1px solid #512129;border-radius:14px;padding:12px 14px}.stat span{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.stat strong{font:700 23px 'Space Grotesk',sans-serif}.stat strong small{font:500 12px 'DM Sans',sans-serif;color:var(--muted)}
-    .board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;perspective:1000px}.card{display:block;width:100%;border:0;background:transparent;padding:0;aspect-ratio:1;cursor:pointer;perspective:800px;min-width:0}.card-inner{display:block;width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .42s cubic-bezier(.2,.75,.2,1)}.card.flipped .card-inner,.card.matched .card-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;display:grid;place-items:center;border-radius:15px;backface-visibility:hidden;border:1px solid #344b68}.front{background:linear-gradient(145deg,#3a1119,#160b0f);font:700 clamp(19px,3vw,29px) 'Space Grotesk',sans-serif;color:#ff9da4;transition:background .2s,border-color .2s}.card:hover:not(:disabled) .front{background:linear-gradient(145deg,#671522,#310c14);border-color:#ff5360}.card:hover:not(:disabled){transform:translateY(-5px);filter:drop-shadow(0 8px 13px #f0183044)}.card.matched{animation:goalFlash .65s ease}@keyframes goalFlash{0%{filter:brightness(1)}35%{filter:brightness(1.8) drop-shadow(0 0 16px #ff2638)}100%{filter:brightness(1)}}.intro h2{text-shadow:0 0 24px #f21b3544}.eyebrow{ text-shadow:0 0 12px #ff263866}.logo img{filter:drop-shadow(0 0 8px #ff253a88)}.btn.primary:hover{box-shadow:0 0 28px #ff263866;transform:translateY(-3px) scale(1.02)}.stat strong{ text-shadow:0 0 14px #ff263833}.back{transform:rotateY(180deg);background:linear-gradient(145deg,#260d12,#10090c);font-size:clamp(25px,4vw,42px)}.symbol-image{display:block;width:64%;height:64%;object-fit:contain;filter:drop-shadow(0 5px 8px #0005)}.card.matched .back{background:linear-gradient(145deg,#4b101b,#1b0a0e);border-color:#ff3947;box-shadow:inset 0 0 0 1px #ff394755,0 0 22px #ff1c3544}.card:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:16px}.card:disabled{cursor:default}
+    .board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;perspective:1000px}.card{display:block;width:100%;border:0;background:transparent;padding:0;aspect-ratio:1;cursor:pointer;perspective:800px;min-width:0}.card-inner{display:block;width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .42s cubic-bezier(.2,.75,.2,1)}.card.flipped .card-inner,.card.matched .card-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;display:grid;place-items:center;border-radius:15px;backface-visibility:hidden;border:1px solid #344b68}.front{background:linear-gradient(145deg,#3a1119,#160b0f);font:700 clamp(19px,3vw,29px) 'Space Grotesk',sans-serif;color:#ff9da4;transition:background .2s,border-color .2s}.card:hover:not(:disabled) .front{background:linear-gradient(145deg,#671522,#310c14);border-color:#ff5360}.card:hover:not(:disabled){transform:translateY(-5px);filter:drop-shadow(0 8px 13px #f0183044)}.card.matched{animation:goalFlash .65s ease}@keyframes goalFlash{0%{filter:brightness(1)}35%{filter:brightness(1.8) drop-shadow(0 0 16px #ff2638)}100%{filter:brightness(1)}}.intro h2{text-shadow:0 0 24px #f21b3544}.eyebrow{ text-shadow:0 0 12px #ff263866}.logo img{filter:drop-shadow(0 0 8px #ff253a88)}.btn.primary:hover{box-shadow:0 0 28px #ff263866;transform:translateY(-3px) scale(1.02)}.stat strong{ text-shadow:0 0 14px #ff263833}.back{transform:rotateY(180deg);background:linear-gradient(145deg,#260d12,#10090c);font-size:clamp(25px,4vw,42px)}.symbol-image{display:block;width:64%;height:64%;object-fit:contain;filter:drop-shadow(0 5px 8px #0005)}.player-photo{width:100%;height:100%;object-fit:cover;object-position:center 22%;border-radius:9px;filter:saturate(1.08)}.portrait-wrap{width:76%;height:57%;display:grid;place-items:center;overflow:hidden;border-radius:9px;background:linear-gradient(145deg,#4a101b,#16090d);border:1px solid #a62c3b;box-shadow:0 4px 18px #f0183033}.portrait-wrap.historic{background:linear-gradient(145deg,#6b4a17,#211307);border-color:#d5a64b}.portrait-fallback{font-size:clamp(28px,5vw,48px);filter:drop-shadow(0 4px 8px #0008)}.shirt-number{position:absolute;top:7px;right:8px;border-radius:7px;padding:2px 6px;background:#b90018;color:white;font:700 10px 'Space Grotesk',sans-serif}.player-caption{font:700 clamp(9px,1.4vw,12px) 'Space Grotesk',sans-serif;max-width:94%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px}.player-role{font-size:8px;color:#d5a8ad;line-height:1.1}.back{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:7px}.front{display:flex;flex-direction:column;gap:6px;letter-spacing:2px}.front small{font:600 7px 'DM Sans',sans-serif;letter-spacing:1px;color:#d58b94}.historic .player-caption{color:#ffe0a1}.card.matched .back{background:linear-gradient(145deg,#4b101b,#1b0a0e);border-color:#ff3947;box-shadow:inset 0 0 0 1px #ff394755,0 0 22px #ff1c3544}.card:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:16px}.card:disabled{cursor:default}
     .controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}.control-group{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--line);border-radius:12px;padding:10px 14px;color:var(--text);background:#ffffff08;font-weight:700;font-size:12px;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px);border-color:#6885a8;background:#ffffff12}.btn.primary{background:linear-gradient(110deg,#ff4652,#b90018);border:0;color:#fff;box-shadow:0 7px 22px #e5091938}.btn:focus-visible,.select:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}.difficulty{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}.select{background:#0b1626;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:9px;font:600 12px 'DM Sans',sans-serif}
     .side-panel{padding:19px}.side-panel h3{font:700 16px 'Space Grotesk',sans-serif;margin:0 0 14px}.tip{background:#e5091910;border:1px solid #e5091944;border-radius:14px;padding:13px;margin-bottom:17px}.tip b{font-size:12px;color:var(--cyan)}.tip p{font-size:12px;line-height:1.6;color:#c3d0df;margin:6px 0 0}.record{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #293b54;color:var(--muted);font-size:12px}.record strong{color:var(--text);font-size:12px}.side-note{font-size:11px;line-height:1.6;color:#8194ad;margin:16px 0 0}.progress{height:7px;border-radius:99px;background:#26364b;overflow:hidden;margin-top:12px}.progress div{height:100%;width:0;background:linear-gradient(90deg,#ff2638,#ff9a3d);transition:width .3s}
     .overlay{position:fixed;inset:0;background:#050a13c9;backdrop-filter:blur(7px);display:none;place-items:center;padding:20px;z-index:5}.overlay.show{display:grid}.modal{width:min(390px,100%);background:#1b0d12;border:1px solid #8b2634;border-radius:22px;padding:28px;text-align:center;box-shadow:0 25px 90px #0008}.modal .trophy{font-size:46px}.modal h2{font:700 27px 'Space Grotesk',sans-serif;margin:9px 0}.modal p{color:var(--muted);font-size:13px;line-height:1.6}.modal-stats{display:flex;justify-content:center;gap:25px;margin:20px 0}.modal-stats strong{display:block;font:700 23px 'Space Grotesk',sans-serif}.modal-stats span{font-size:11px;color:var(--muted)}footer{text-align:center;color:#71839c;font-size:11px;margin-top:22px}
@@ -31,13 +31,48 @@
         <div class="board" id="board" aria-label="Tabuleiro de cartas"></div>
         <div class="controls"><div class="control-group"><button class="btn primary" id="restart">↻ Reiniciar</button><button class="btn" id="hint">☼ Dica</button></div><label class="difficulty">Dificuldade <select class="select" id="difficulty"><option value="easy">Fácil · 8 pares</option><option value="medium" selected>Médio · 10 pares</option><option value="hard">Difícil · 12 pares</option></select></label></div>
       </section>
-      <aside class="side-panel"><h3>Seu progresso</h3><div class="tip"><b>✧ DICA DE MEMÓRIA</b><p id="tipText" aria-live="polite">Observe as cartas com atenção. Tente memorizar as posições!</p></div><div class="records"><div class="record"><span>Melhor tempo</span><strong id="bestTime">—</strong></div><div class="record"><span>Menos jogadas</span><strong id="bestMoves">—</strong></div><div class="record"><span>Precisão</span><strong id="accuracy">100%</strong></div><div class="record"><span>Cartas encontradas</span><strong id="found">0%</strong></div><div class="progress"><div id="progressBar"></div></div></div><p class="side-note">💡 Uma jogada corresponde a virar duas cartas. Seu recorde fica salvo neste navegador.</p></aside>
+      <aside class="side-panel"><h3>Seu progresso</h3><div class="tip"><b>✧ DICA DE MEMÓRIA</b><p id="tipText" aria-live="polite">Observe as cartas com atenção. Tente memorizar as posições!</p></div><div class="records"><div class="record"><span>Melhor tempo</span><strong id="bestTime">—</strong></div><div class="record"><span>Menos jogadas</span><strong id="bestMoves">—</strong></div><div class="record"><span>Precisão</span><strong id="accuracy">100%</strong></div><div class="record"><span>Cartas encontradas</span><strong id="found">0%</strong></div><div class="progress"><div id="progressBar"></div></div></div><div class="tip history-tip"><b>🏆 MEMÓRIA RUBRO-NEGRA</b><p>Zico, Júnior e Adriano. Libertadores e Mundial de 1981. Uma história gigante dentro e fora de campo.</p></div><p class="side-note">💡 Uma jogada corresponde a virar duas cartas. O baralho mistura atletas do elenco de 2026 e lendas do clube.</p></aside>
     </div>
     <footer>NAÇÃO RUBRO-NEGRA • Boa partida! ❤️🖤</footer>
   </main>
   <div class="overlay" id="winModal" role="dialog" aria-modal="true" aria-labelledby="winTitle"><div class="modal"><div class="trophy">🏆</div><h2 id="winTitle">Mandou muito bem!</h2><p>Você encontrou todos os pares. Que tal tentar superar seu recorde?</p><div class="modal-stats"><div><strong id="finalTime">00:00</strong><span>TEMPO</span></div><div><strong id="finalMoves">0</strong><span>JOGADAS</span></div></div><button class="btn primary" id="playAgain">Jogar novamente ↗</button></div></div>
   <script>
-    const symbols=['⚽','🏆','🥅','👟','🧤','📣','⭐','🔥','🏟️','🎟️','🦁','🔴'];
+    const memoryCards = [
+      {id:'arrascaeta',name:'Arrascaeta',number:'10',role:'Meia',emoji:'🔟',image:'https://storage.googleapis.com/crf-strapi-media-prd/DE_ARRASCAETA_Fut_Prof_Masc_f907731dd7/DE_ARRASCAETA_Fut_Prof_Masc_f907731dd7.png'},
+      {id:'pedro',name:'Pedro',number:'9',role:'Atacante',emoji:'⚽',image:'https://placar.com.br/_next/image/?q=75&url=https%3A%2F%2Fplacar.com%2Fwp-content%2Fuploads%2F2026%2F01%2Fprocessed-6EAC2627-E1D6-4722-B1FD-3BD376C6317E.jpeg&w=3840'},
+      {id:'carrascal',name:'Carrascal',number:'15',role:'Meia',emoji:'🎩',image:'https://p2.trrsf.com/image/fget/cf/1548/0/images.terra.com/2026/01/16/166080742-novo-uniforme-do-flamengo-2.jpg'},
+      {id:'lino',name:'Samuel Lino',number:'16',role:'Atacante',emoji:'⚡',image:'https://flaestatistica.com.br/imagens/jogadores/SamuelLino.jpg'},
+      {id:'rossi',name:'Rossi',number:'1',role:'Goleiro',emoji:'🧤'},
+      {id:'andrew',name:'Andrew',number:'42',role:'Goleiro',emoji:'🧤'},
+      {id:'dyogo',name:'Dyogo Alves',number:'49',role:'Goleiro',emoji:'🧤'},
+      {id:'leo-ortiz',name:'Léo Ortiz',number:'3',role:'Zagueiro',emoji:'🛡️'},
+      {id:'leo-pereira',name:'Léo Pereira',number:'4',role:'Zagueiro',emoji:'🛡️'},
+      {id:'danilo',name:'Danilo',number:'13',role:'Zagueiro',emoji:'🛡️'},
+      {id:'vitao',name:'Vitão',number:'44',role:'Zagueiro',emoji:'🛡️'},
+      {id:'joao-victor',name:'João Victor',number:'61',role:'Zagueiro',emoji:'🛡️'},
+      {id:'varela',name:'Varela',number:'2',role:'Lateral',emoji:'🏃'},
+      {id:'ayrton-lucas',name:'Ayrton Lucas',number:'6',role:'Lateral',emoji:'🏃'},
+      {id:'emerson-royal',name:'Emerson Royal',number:'22',role:'Lateral',emoji:'🏃'},
+      {id:'alex-sandro',name:'Alex Sandro',number:'26',role:'Lateral',emoji:'🏃'},
+      {id:'pulgar',name:'Erick Pulgar',number:'5',role:'Volante',emoji:'⚙️'},
+      {id:'saul',name:'Saúl',number:'8',role:'Meia',emoji:'⚙️'},
+      {id:'de-la-cruz',name:'De la Cruz',number:'18',role:'Meia',emoji:'⚙️'},
+      {id:'paqueta',name:'Lucas Paquetá',number:'11',role:'Meia',emoji:'🎯'},
+      {id:'jorginho',name:'Jorginho',number:'21',role:'Volante',emoji:'⚙️'},
+      {id:'evertton',name:'Evertton Araújo',number:'52',role:'Volante',emoji:'⚙️'},
+      {id:'luiz-araujo',name:'Luiz Araújo',number:'7',role:'Atacante',emoji:'⚽'},
+      {id:'valencia',name:'Anthony Valencia',number:'14',role:'Atacante',emoji:'⚽'},
+      {id:'plata',name:'Gonzalo Plata',number:'19',role:'Atacante',emoji:'⚽'},
+      {id:'bruno-henrique',name:'Bruno Henrique',number:'27',role:'Atacante',emoji:'🔥'},
+      {id:'freitas',name:'Joaquín Freitas',number:'30',role:'Atacante',emoji:'⚽'},
+      {id:'zico',name:'Zico',number:'10',role:'Ídolo histórico',emoji:'👑',historic:true},
+      {id:'junior',name:'Júnior',number:'5',role:'Ídolo histórico',emoji:'⭐',historic:true},
+      {id:'adriano',name:'Adriano',number:'10',role:'Ídolo histórico',emoji:'🦁',historic:true},
+      {id:'leonidas',name:'Leônidas da Silva',number:'',role:'Lenda rubro-negra',emoji:'🏅',historic:true},
+      {id:'liberta81',name:'Libertadores 1981',number:'81',role:'Conquista histórica',emoji:'🏆',historic:true},
+      {id:'mundo81',name:'Mundial 1981',number:'81',role:'Conquista histórica',emoji:'🌎',historic:true}
+    ];
+    const featuredIds = ['arrascaeta','pedro','carrascal','lino'];
     const sizes={easy:8,medium:10,hard:12};
     const board=document.getElementById('board'),timeEl=document.getElementById('time'),movesEl=document.getElementById('moves'),pairsEl=document.getElementById('pairs');
     let deck=[],first=null,second=null,locked=false,moves=0,matched=0,seconds=0,timer=null,started=false;
@@ -54,25 +89,35 @@
       board.innerHTML='';
       deck.forEach((item,index)=>{
         const btn=document.createElement('button');btn.className='card';btn.type='button';btn.setAttribute('aria-label','Carta fechada');btn.dataset.index=index;
-        const img=document.createElement('img');img.className='symbol-image';img.src=emojiImageUrl(item.symbol);img.alt=item.symbol;img.loading='eager';img.decoding='async';
-        img.addEventListener('error',()=>{const fallback=document.createElement('span');fallback.textContent=item.symbol;fallback.style.fontSize='clamp(27px,4vw,44px)';img.replaceWith(fallback)},{once:true});
         const inner=document.createElement('span');inner.className='card-inner';
-        const front=document.createElement('span');front.className='face front';front.setAttribute('aria-hidden','true');front.textContent='?';
-        const back=document.createElement('span');back.className='face back';back.setAttribute('aria-hidden','true');back.appendChild(img);
-        inner.append(front,back);btn.appendChild(inner);btn.addEventListener('click',()=>flip(index,btn));board.appendChild(btn);
+        const front=document.createElement('span');front.className='face front';front.setAttribute('aria-hidden','true');front.innerHTML='<span>CRF</span><small>TOQUE PARA VIRAR</small>';
+        const back=document.createElement('span');back.className='face back';
+        const portrait=document.createElement('span');portrait.className='portrait-wrap'+(item.historic?' historic':'');
+        if(item.image){
+          const img=document.createElement('img');img.className='player-photo';img.src=item.image;img.alt='Foto de '+item.name;img.loading='eager';img.decoding='async';
+          img.addEventListener('error',()=>{const fallback=document.createElement('span');fallback.className='portrait-fallback';fallback.textContent=item.emoji;img.replaceWith(fallback)},{once:true});
+          portrait.appendChild(img);
+        }else{
+          const fallback=document.createElement('span');fallback.className='portrait-fallback';fallback.textContent=item.emoji;portrait.appendChild(fallback);
+        }
+        const number=document.createElement('span');number.className='shirt-number';number.textContent=item.number||'CRF';
+        const caption=document.createElement('span');caption.className='player-caption';caption.textContent=item.name;
+        const role=document.createElement('small');role.className='player-role';role.textContent=item.role;
+        back.append(portrait,number,caption,role);inner.append(front,back);btn.appendChild(inner);
+        btn.addEventListener('click',()=>flip(index,btn));board.appendChild(btn);
       });
     }
     function reset(){
-      stopTimer();const count=sizes[$('difficulty').value];deck=shuffle([...symbols.slice(0,count),...symbols.slice(0,count)].map((symbol,i)=>({symbol,id:i%count})));
+      stopTimer();const count=sizes[$('difficulty').value];const featured=featuredIds.map(id=>memoryCards.find(card=>card.id===id));const remaining=shuffle(memoryCards.filter(card=>!featuredIds.includes(card.id))).slice(0,count-featured.length);const chosen=shuffle([...featured,...remaining]);deck=shuffle([...chosen,...chosen].map(card=>({...card})));
       first=second=null;locked=false;moves=matched=seconds=0;started=false;timeEl.textContent='00:00';movesEl.textContent='0';pairsEl.innerHTML='0 <small>/ '+count+'</small>';$('accuracy').textContent='100%';$('found').textContent='0%';$('progressBar').style.width='0%';$('tipText').textContent='Observe as cartas com atenção. Tente memorizar as posições dos símbolos!';$('winModal').classList.remove('show');render();updateRecords();
     }
     function flip(index,btn){
       if(locked||btn.classList.contains('flipped')||btn.classList.contains('matched'))return;
       if(!started){started=true;startTimer()}
-      btn.classList.add('flipped');btn.setAttribute('aria-label','Carta '+deck[index].symbol);
+      btn.classList.add('flipped');btn.setAttribute('aria-label','Carta '+deck[index].name);
       if(!first){first={index,btn};return}
       second={index,btn};moves++;movesEl.textContent=moves;locked=true;
-      if(deck[first.index].symbol===deck[second.index].symbol){
+      if(deck[first.index].id===deck[second.index].id){
         first.btn.classList.add('matched');second.btn.classList.add('matched');first.btn.disabled=second.btn.disabled=true;matched++;
         pairsEl.innerHTML=matched+' <small>/ '+sizes[$('difficulty').value]+'</small>';updateProgress();first=second=null;locked=false;
         if(matched===sizes[$('difficulty').value])finish();
@@ -97,8 +142,8 @@
       if(locked)return;
       const hidden=deck.map((c,i)=>({c,i})).filter(x=>!board.children[x.i].classList.contains('flipped')&&!board.children[x.i].classList.contains('matched'));
       if(hidden.length<2){$('tipText').textContent='Você já revelou quase todas as cartas. Continue procurando os pares!';return}
-      const sample=hidden.slice(0,Math.min(4,hidden.length)).map(x=>x.c.symbol);
-      $('tipText').textContent='Memorize estes símbolos e procure suas posições: '+sample.join('  ')+' . A dica não revela nenhum par!';
+      const sample=hidden.slice(0,Math.min(4,hidden.length)).map(x=>x.c.name);
+      $('tipText').textContent='Memorize estes jogadores e referências e procure suas posições: '+sample.join('  ')+' . A dica não revela nenhum par!';
       if(!started){started=true;startTimer()}
     });
     reset();
