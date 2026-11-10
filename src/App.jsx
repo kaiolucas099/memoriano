@@ -43,6 +43,7 @@ export default function App() {
   const [soundEnabled, setSoundEnabled] = useState(() => {
     try { return localStorage.getItem('memoriano-sound') !== 'off'; } catch { return true; }
   });
+  const [anthemPlaying, setAnthemPlaying] = useState(false);
   const [volume, setVolume] = useState(() => {
     try { const saved = Number(localStorage.getItem('memoriano-volume')); return Number.isFinite(saved) && saved > 0 ? Math.min(1, saved) : 0.55; } catch { return 0.55; }
   });
@@ -61,6 +62,7 @@ export default function App() {
   }, []);
 
   const reset = useCallback((level = difficulty) => {
+    setAnthemPlaying(false);
     if (lockTimer.current) clearTimeout(lockTimer.current);
     const total = sizes[level];
     const featured = featuredIds.map((id) => memoryCards.find((player) => player.id === id)).filter(Boolean);
@@ -281,6 +283,26 @@ export default function App() {
             <div className="trophy">🏆</div><h2 id="winTitle">Mandou muito bem!</h2>
             <p>Você encontrou todos os pares. Que tal tentar superar seu recorde?</p>
             <div className="modal-stats"><div><strong>{formatTime(seconds)}</strong><span>TEMPO</span></div><div><strong>{moves}</strong><span>JOGADAS</span></div></div>
+            <div className="anthem-celebration">
+              <p>❤️🖤 A vitória é rubro-negra! Comemore ao som do hino.</p>
+              {!anthemPlaying ? (
+                <button className="btn anthem-button" type="button" onClick={() => { setAnthemPlaying(true); }}>
+                  ▶ Tocar Hino do Flamengo
+                </button>
+              ) : (
+                <div className="anthem-player">
+                  <iframe
+                    title="Hino do Flamengo no YouTube"
+                    src="https://www.youtube-nocookie.com/embed/Sx86-18V3m8?autoplay=1&rel=0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                  <button className="btn" type="button" onClick={() => setAnthemPlaying(false)}>Parar hino</button>
+                </div>
+              )}
+              <a className="anthem-link" href="https://www.youtube.com/watch?v=Sx86-18V3m8" target="_blank" rel="noreferrer">Abrir vídeo no YouTube</a>
+            </div>
             <button className="btn primary" type="button" onClick={() => reset()}>Jogar novamente ↗</button>
           </div>
         </div>
