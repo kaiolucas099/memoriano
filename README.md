@@ -1,28 +1,50 @@
-# Memoriano 🧠
+# Memoriano ❤️🖤
 
-Jogo da memória responsivo feito com HTML, CSS e JavaScript puro.
+Jogo da memória rubro-negro feito com **React 18 + Vite 5**.
 
-## Como executar localmente
+## Requisitos
 
-**Opção 1 — mais simples:** abra o arquivo `index.html` no navegador.
+- Node.js 18 ou superior
+- npm
 
-**Opção 2 — servidor local:**
+## Executar localmente
 
 ```bash
-python -m http.server 8000
+git clone https://github.com/kaiolucas099/memoriano.git
+cd memoriano
+npm install
+npm run dev
 ```
 
-Depois acesse http://localhost:8000.
+O Vite exibirá o endereço local (normalmente http://localhost:5173).
 
-Não precisa instalar dependências nem usar Node.js.
+## Scripts
 
-## Como jogar
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento Vite |
+| `npm run build` | Gera a versão de produção em `dist/` |
+| `npm run preview` | Executa uma prévia local da versão de produção |
 
-- Escolha o tamanho do tabuleiro.
-- Vire duas cartas por rodada e encontre os pares.
-- Complete o tabuleiro com o menor número de jogadas e no menor tempo possível.
-- Seu melhor tempo fica salvo no navegador.
+## Publicar no Cloudflare Pages
 
-## Tecnologias
+Conecte este repositório ao Cloudflare Pages e use:
 
-HTML5, CSS3 e JavaScript (sem frameworks).
+| Configuração | Valor |
+| --- | --- |
+| Production branch | `main` |
+| Framework preset | `Vite` (ou `None`, configurando os campos abaixo) |
+| Root directory | `/` (raiz do repositório) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+
+Não é necessário configurar servidor ou função: o jogo é uma aplicação React estática. O Cloudflare Pages instala as dependências, executa o build e publica o conteúdo de `dist/`. Novos commits na branch `main` disparam novas publicações se a integração Git estiver habilitada.
+
+## Estrutura
+
+- `src/App.jsx`: interface e lógica do jogo
+- `src/data.js`: dados dos jogadores e imagens
+- `src/main.jsx`: inicialização do React
+- `src/styles.css`: estilos
+- `public/assets/`: arquivos estáticos, incluindo o escudo
+- `vite.config.js`: configuração do Vite
