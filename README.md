@@ -26,6 +26,27 @@ O Vite exibirá o endereço local (normalmente http://localhost:5173).
 | `npm run build` | Gera a versão de produção em `dist/` |
 | `npm run preview` | Executa uma prévia local da versão de produção |
 
+## Backend local e autenticação
+
+O projeto agora inclui uma API Express e banco SQLite para desenvolvimento local.
+
+```bash
+npm install
+npm run dev
+```
+
+O comando inicia o frontend Vite em `http://localhost:5173` e a API em `http://localhost:3001`. O Vite encaminha `/api` para a API local. O banco é criado automaticamente em `data/memoriano.sqlite` (essa pasta é ignorada pelo Git).
+
+Rotas: `POST /api/auth/register`, `POST /api/auth/login`, `GET /api/auth/me`, `POST /api/auth/logout` e `GET /api/health`.
+
+Executar os testes automatizados da API:
+
+```bash
+npm test
+```
+
+As senhas são armazenadas com bcrypt e a autenticação usa sessão em cookie HttpOnly. O armazenamento padrão de sessões em memória é adequado apenas para desenvolvimento; antes de publicar, será necessário configurar um armazenamento persistente de sessões, segredo forte, HTTPS e proteção adicional contra abuso.
+
 ## Publicar no Cloudflare Pages
 
 Conecte este repositório ao Cloudflare Pages e use:
