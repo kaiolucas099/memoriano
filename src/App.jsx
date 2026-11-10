@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { memoryCards } from './data';
-import { playPairSound, playVictorySound } from './audio';
+import { playVictorySound } from './audio';
 
 const featuredIds = ['arrascaeta', 'pedro', 'carrascal', 'lino'];
 const sizes = { easy: 8, medium: 10, hard: 12 };
@@ -44,6 +44,7 @@ export default function App() {
     try { return localStorage.getItem('memoriano-sound') !== 'off'; } catch { return true; }
   });
   const [anthemPlaying, setAnthemPlaying] = useState(false);
+  const [anthemMatchCount, setAnthemMatchCount] = useState(0);
   const [volume, setVolume] = useState(() => {
     try { const saved = Number(localStorage.getItem('memoriano-volume')); return Number.isFinite(saved) && saved > 0 ? Math.min(1, saved) : 0.55; } catch { return 0.55; }
   });
@@ -63,6 +64,7 @@ export default function App() {
 
   const reset = useCallback((level = difficulty) => {
     setAnthemPlaying(false);
+    setAnthemMatchCount(0);
     if (lockTimer.current) clearTimeout(lockTimer.current);
     const total = sizes[level];
     const featured = featuredIds.map((id) => memoryCards.find((player) => player.id === id)).filter(Boolean);
@@ -142,7 +144,7 @@ export default function App() {
     setFlipped([firstIndex, index]);
     setLocked(true);
     if (deck[firstIndex].id === deck[index].id) {
-      if (soundEnabled) playPairSound(volume);
+      if (soundEnabled) setAnthemMatchCount((value) => value + 1);
       setMatched((value) => [...value, firstIndex, index]);
       setFlipped([]);
       setLocked(false);
@@ -238,7 +240,22 @@ export default function App() {
             <label className="volume-control">Volume
               <input aria-label="Volume dos efeitos sonoros" type="range" min="0" max="1" step="0.05" value={volume} onChange={changeVolume} disabled={!soundEnabled} />
             </label>
-            <span className="sound-caption">Vinheta original rubro-negra • acerto e vitória</span>
+            <span className="sound-caption">Hino do Flamengo a cada par acertado • vinheta na vitória</span>
+          </div>
+          {soundEnabled && anthemMatchCount > 0 && (
+            <div className="match-anthem" aria-live="polite">
+              <strong>❤️🖤 Par encontrado! Tocando o Hino do Flamengo</strong>
+              <iframe
+                key={anthemMatchCount}
+                title={'Hino do Flamengo após ' + anthemMatchCount + ' acerto(s)'}
+                src="https://www.youtube-nocookie.com/embed/Sx86-18V3m8?autoplay=1&controls=1&rel=0"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+              <span>O vídeo reinicia a cada novo par. Se a reprodução automática for bloqueada, aperte play.</span>
+            </div>
+          )}
           </div>
         </section>
 
