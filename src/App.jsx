@@ -42,7 +42,7 @@ function PlayerVisual({ player, card = false }) {
   );
 }
 
-export default function App() {
+export default function App({ user, onLogout }) {
   const [difficulty, setDifficulty] = useState('medium');
   const [deck, setDeck] = useState([]);
   const [flipped, setFlipped] = useState([]);
@@ -191,6 +191,8 @@ export default function App() {
         </div>
         <div className="top-tag">⚽ DESAFIO RUBRO-NEGRO</div>
       </header>
+
+      <div className="auth-userbar"><span>Olá, {user?.name}</span><button className="btn" type="button" onClick={onLogout}>Sair</button></div>
 
       <section className="intro">
         <div className="eyebrow">PAIXÃO • RAÇA • MEMÓRIA</div>
