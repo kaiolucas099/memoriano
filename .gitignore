@@ -3,3 +3,8 @@ dist/
 .wrangler/
 .DS_Store
 *.local
+
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
