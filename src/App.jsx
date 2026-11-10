@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { memoryCards } from './data';
 import { playVictorySound } from './audio';
 
-const featuredIds = ['arrascaeta', 'pedro', 'carrascal', 'lino'];
+const featuredIds = ['andrew', 'paqueta', 'zico', 'junior', 'adriano', 'liberta81', 'mundo81'];
 const sizes = { easy: 8, medium: 10, hard: 12 };
 const formatTime = (value) => String(Math.floor(value / 60)).padStart(2, '0') + ':' + String(value % 60).padStart(2, '0');
 const shuffle = (items) => {
