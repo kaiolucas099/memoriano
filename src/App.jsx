@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { memoryCards } from './data';
+import { playPairSound, playVictorySound } from './audio';
 
 const featuredIds = ['arrascaeta', 'pedro', 'carrascal', 'lino'];
 const sizes = { easy: 8, medium: 10, hard: 12 };
@@ -39,6 +40,12 @@ export default function App() {
   const [won, setWon] = useState(false);
   const [tip, setTip] = useState('Observe os rostos e os nomes. Memorize as posições para encontrar os pares!');
   const [records, setRecords] = useState({ time: null, moves: null });
+  const [soundEnabled, setSoundEnabled] = useState(() => {
+    try { return localStorage.getItem('memoriano-sound') !== 'off'; } catch { return true; }
+  });
+  const [volume, setVolume] = useState(() => {
+    try { const saved = Number(localStorage.getItem('memoriano-volume')); return Number.isFinite(saved) && saved > 0 ? Math.min(1, saved) : 0.55; } catch { return 0.55; }
+  });
   const lockTimer = useRef(null);
   const count = sizes[difficulty];
   const pairsFound = matched.length / 2;
@@ -97,6 +104,24 @@ export default function App() {
     }
   }, [matched, count, difficulty, seconds, moves]);
 
+  useEffect(() => {
+    if (won && soundEnabled) playVictorySound(volume);
+  }, [won, soundEnabled, volume]);
+
+  const toggleSound = () => {
+    setSoundEnabled((enabled) => {
+      const next = !enabled;
+      try { localStorage.setItem('memoriano-sound', next ? 'on' : 'off'); } catch { /* storage indisponível */ }
+      return next;
+    });
+  };
+
+  const changeVolume = (event) => {
+    const next = Number(event.target.value);
+    setVolume(next);
+    try { localStorage.setItem('memoriano-volume', String(next)); } catch { /* storage indisponível */ }
+  };
+
   const chooseDifficulty = (event) => {
     const level = event.target.value;
     setDifficulty(level);
@@ -115,6 +140,7 @@ export default function App() {
     setFlipped([firstIndex, index]);
     setLocked(true);
     if (deck[firstIndex].id === deck[index].id) {
+      if (soundEnabled) playPairSound(volume);
       setMatched((value) => [...value, firstIndex, index]);
       setFlipped([]);
       setLocked(false);
@@ -202,6 +228,15 @@ export default function App() {
                 <option value="hard">Difícil · 12 pares</option>
               </select>
             </label>
+          </div>
+          <div className="sound-controls">
+            <button className="btn sound-toggle" type="button" onClick={toggleSound} aria-pressed={soundEnabled}>
+              {soundEnabled ? '🔊 Som ligado' : '🔇 Som desligado'}
+            </button>
+            <label className="volume-control">Volume
+              <input aria-label="Volume dos efeitos sonoros" type="range" min="0" max="1" step="0.05" value={volume} onChange={changeVolume} disabled={!soundEnabled} />
+            </label>
+            <span className="sound-caption">Vinheta original rubro-negra • acerto e vitória</span>
           </div>
         </section>
 
