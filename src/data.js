@@ -29,6 +29,6 @@ export const memoryCards = [
       {id:'zico',name:'Zico',number:'10',role:'Ídolo histórico',emoji:'👑',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Zico_2012.jpg/640px-Zico_2012.jpg'},
       {id:'junior',name:'Júnior',number:'5',role:'Ídolo histórico',emoji:'⭐',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Leovegildo_Junior.jpg/640px-Leovegildo_Junior.jpg'},
       {id:'adriano',name:'Adriano Imperador',number:'10',role:'Ídolo histórico',emoji:'🦁',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Adriano_Imperador_2010.jpg/640px-Adriano_Imperador_2010.jpg'},
-      {id:'liberta81',name:'Libertadores 1981',number:'81',role:'Conquista histórica',emoji:'🏆',historic:true},
-      {id:'mundo81',name:'Mundial 1981',number:'81',role:'Conquista histórica',emoji:'🌎',historic:true}
+      {id:'liberta81',name:'Libertadores 1981',number:'81',role:'Conquista histórica',emoji:'🏆',historic:true,image:'https://eusouflamengo.com.br/wp-content/uploads/2024/06/Time-Flamengo-Campeao-Copa-Libertadores-da-America-1981.jpg'},
+      {id:'mundo81',name:'Mundial 1981',number:'81',role:'Conquista histórica',emoji:'🌎',historic:true,image:'https://eusouflamengo.com.br/wp-content/uploads/2024/06/Time-Flamengo-Campeao-Mundial-1981.jpg'}
     ];
