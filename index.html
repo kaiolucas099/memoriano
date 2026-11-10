@@ -35,14 +35,14 @@
       </section>
       <aside class="side-panel"><h3>Seu progresso</h3><div class="tip"><b>✧ DICA DE MEMÓRIA</b><p id="tipText" aria-live="polite">Observe as cartas com atenção. Tente memorizar as posições!</p></div><div class="records"><div class="record"><span>Melhor tempo</span><strong id="bestTime">—</strong></div><div class="record"><span>Menos jogadas</span><strong id="bestMoves">—</strong></div><div class="record"><span>Precisão</span><strong id="accuracy">100%</strong></div><div class="record"><span>Cartas encontradas</span><strong id="found">0%</strong></div><div class="progress"><div id="progressBar"></div></div></div><div class="tip history-tip"><b>🏆 MEMÓRIA RUBRO-NEGRA</b><p>Zico, Júnior e Adriano. Libertadores e Mundial de 1981. Uma história gigante dentro e fora de campo.</p></div><p class="side-note">💡 Uma jogada corresponde a virar duas cartas. O baralho mistura atletas do elenco de 2026 e lendas do clube.</p></aside>
     </div>
-    <section class="squad-section" aria-label="Elenco do Flamengo"><div class="squad-heading"><div><div class="eyebrow">NAÇÃO RUBRO-NEGRA</div><h2>Elenco do Mengão</h2><p>Conheça os 27 jogadores do grupo principal. As fotos abrem junto com os cards do jogo.</p></div><span class="squad-count">27 CRAQUES</span></div><div class="squad-gallery" id="squadGallery"></div><div class="history-strip"><b>🏆 MEMÓRIA DO CLUBE</b><span>1981 • Mundial e Libertadores</span><span>2019 • Libertadores</span><span>2022 • Libertadores</span><span>2025 • Tetracampeonato da América</span></div></section>
+    <section class="squad-section" aria-label="Elenco do Flamengo"><div class="squad-heading"><div><div class="eyebrow">NAÇÃO RUBRO-NEGRA</div><h2>Elenco do Mengão</h2><p>Conheça os 27 jogadores do grupo principal. As fotos abrem junto com os cards do jogo.</p></div><span class="squad-count">27 CRAQUES</span></div><div class="squad-gallery" id="squadGallery"></div><div class="history-strip"><b>🏆 MEMÓRIA DO CLUBE</b><span>1981 • Mundial e Libertadores</span><span>2019 • Libertadores</span><span>2022 • Libertadores</span><span>2025 • Tetracampeonato da América</span><span>👑 Cartas especiais: Zico, Júnior e Adriano</span></div></section>
     <footer>NAÇÃO RUBRO-NEGRA • Boa partida! ❤️🖤</footer>
   </main>
   <div class="overlay" id="winModal" role="dialog" aria-modal="true" aria-labelledby="winTitle"><div class="modal"><div class="trophy">🏆</div><h2 id="winTitle">Mandou muito bem!</h2><p>Você encontrou todos os pares. Que tal tentar superar seu recorde?</p><div class="modal-stats"><div><strong id="finalTime">00:00</strong><span>TEMPO</span></div><div><strong id="finalMoves">0</strong><span>JOGADAS</span></div></div><button class="btn primary" id="playAgain">Jogar novamente ↗</button></div></div>
   <script>
     const memoryCards = [
       {id:'rossi',name:'Rossi',number:'1',role:'Goleiro',emoji:'🧤',image:'https://storage.googleapis.com/crf-strapi-media-prd/ROSSI_Fut_Prof_Masc_81d46c6b64/ROSSI_Fut_Prof_Masc_81d46c6b64.png'},
-      {id:'andrew',name:'Andrew',number:'42',role:'Goleiro',emoji:'🧤'},
+      {id:'andrew',name:'Andrew',number:'42',role:'Goleiro',emoji:'🧤',image:'https://storage.googleapis.com/crf-strapi-media-prd/ANDREW_Fut_Prof_Masc_9d3d8b8e3a/ANDREW_Fut_Prof_Masc_9d3d8b8e3a.png'},
       {id:'dyogo',name:'Dyogo Alves',number:'49',role:'Goleiro',emoji:'🧤',image:'https://storage.googleapis.com/crf-strapi-media-prd/DYOGO_ALVES_Fut_Prof_Masc_df6af7aa58/DYOGO_ALVES_Fut_Prof_Masc_df6af7aa58.png'},
       {id:'leo-ortiz',name:'Léo Ortiz',number:'3',role:'Zagueiro',emoji:'🛡️',image:'https://eusouflamengo.com.br/wp-content/uploads/2025/12/3-Leo-Ortiz.jpg'},
       {id:'leo-pereira',name:'Léo Pereira',number:'4',role:'Zagueiro',emoji:'🛡️',image:'https://storage.googleapis.com/crf-strapi-media-prd/LEO_PEREIRA_Fut_Prof_Masc_2d29518629/LEO_PEREIRA_Fut_Prof_Masc_2d29518629.png'},
@@ -58,7 +58,7 @@
       {id:'arrascaeta',name:'Arrascaeta',number:'10',role:'Meia',emoji:'🔟',image:'https://eusouflamengo.com.br/wp-content/uploads/2025/12/10-De-Arrascaeta.jpg'},
       {id:'carrascal',name:'Carrascal',number:'15',role:'Meia',emoji:'🎩',image:'https://storage.googleapis.com/crf-strapi-media-prd/CARRASCAL_Fut_Prof_Masc_69cb5c6eed/CARRASCAL_Fut_Prof_Masc_69cb5c6eed.png'},
       {id:'de-la-cruz',name:'De la Cruz',number:'18',role:'Meia',emoji:'🎯',image:'https://storage.googleapis.com/crf-strapi-media-prd/DE_LA_CRUZ_a860aa7da2/DE_LA_CRUZ_a860aa7da2.jpg'},
-      {id:'paqueta',name:'Lucas Paquetá',number:'11',role:'Meia',emoji:'🎯'},
+      {id:'paqueta',name:'Lucas Paquetá',number:'20',role:'Meia',emoji:'🎯',image:'https://storage.googleapis.com/crf-strapi-media-prd/PAQUETA_Fut_Prof_Masc_7d86b9a8d1/PAQUETA_Fut_Prof_Masc_7d86b9a8d1.png'},
       {id:'jorginho',name:'Jorginho',number:'21',role:'Volante',emoji:'⚙️',image:'https://storage.googleapis.com/crf-strapi-media-prd/JORGINHO_Fut_Prof_Masc_998dab858e/JORGINHO_Fut_Prof_Masc_998dab858e.png'},
       {id:'evertton',name:'Evertton Araújo',number:'52',role:'Volante',emoji:'⚙️',image:'https://eusouflamengo.com.br/wp-content/uploads/2025/12/52-Evertton-Araujo.jpg'},
       {id:'luiz-araujo',name:'Luiz Araújo',number:'7',role:'Atacante',emoji:'⚽',image:'https://eusouflamengo.com.br/wp-content/uploads/2025/12/7-Luiz-Araujo.jpg'},
@@ -68,9 +68,9 @@
       {id:'plata',name:'Gonzalo Plata',number:'19',role:'Atacante',emoji:'⚽',image:'https://eusouflamengo.com.br/wp-content/uploads/2025/12/50-Gonzalo-Plata.jpg'},
       {id:'bruno-henrique',name:'Bruno Henrique',number:'27',role:'Atacante',emoji:'🔥',image:'https://storage.googleapis.com/crf-strapi-media-prd/BRUNO_HENRIQUE_Fut_Prof_Masc_345dfcfacc/BRUNO_HENRIQUE_Fut_Prof_Masc_345dfcfacc.png'},
       {id:'freitas',name:'Joaquín Freitas',number:'30',role:'Atacante',emoji:'⚽',image:'https://storage.googleapis.com/crf-strapi-media-prd/PECAS_SITE_FLAMENGO_JOAQUIN_dbe6c3b2da/PECAS_SITE_FLAMENGO_JOAQUIN_dbe6c3b2da.png'},
-      {id:'zico',name:'Zico',number:'10',role:'Ídolo histórico',emoji:'👑',historic:true},
-      {id:'junior',name:'Júnior',number:'5',role:'Ídolo histórico',emoji:'⭐',historic:true},
-      {id:'adriano',name:'Adriano Imperador',number:'10',role:'Ídolo histórico',emoji:'🦁',historic:true},
+      {id:'zico',name:'Zico',number:'10',role:'Ídolo histórico',emoji:'👑',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Zico_2012.jpg/640px-Zico_2012.jpg'},
+      {id:'junior',name:'Júnior',number:'5',role:'Ídolo histórico',emoji:'⭐',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Leovegildo_Junior.jpg/640px-Leovegildo_Junior.jpg'},
+      {id:'adriano',name:'Adriano Imperador',number:'10',role:'Ídolo histórico',emoji:'🦁',historic:true,image:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Adriano_Imperador_2010.jpg/640px-Adriano_Imperador_2010.jpg'},
       {id:'liberta81',name:'Libertadores 1981',number:'81',role:'Conquista histórica',emoji:'🏆',historic:true},
       {id:'mundo81',name:'Mundial 1981',number:'81',role:'Conquista histórica',emoji:'🌎',historic:true}
     ];
@@ -91,7 +91,7 @@
       const gallery=document.getElementById('squadGallery');
       if(!gallery)return;
       gallery.innerHTML='';
-      memoryCards.filter(item=>!item.historic).forEach(item=>{
+      memoryCards.forEach(item=>{
         const card=document.createElement('article');card.className='squad-player';
         const tag=document.createElement('em');tag.textContent=item.number||'CRF';
         const name=document.createElement('strong');name.textContent=item.name;
@@ -130,7 +130,7 @@
     }
     function reset(){
       stopTimer();const count=sizes[$('difficulty').value];const featured=featuredIds.map(id=>memoryCards.find(card=>card.id===id));const remaining=shuffle(memoryCards.filter(card=>!featuredIds.includes(card.id))).slice(0,count-featured.length);const chosen=shuffle([...featured,...remaining]);deck=shuffle([...chosen,...chosen].map(card=>({...card})));
-      first=second=null;locked=false;moves=matched=seconds=0;started=false;timeEl.textContent='00:00';movesEl.textContent='0';pairsEl.innerHTML='0 <small>/ '+count+'</small>';$('accuracy').textContent='100%';$('found').textContent='0%';$('progressBar').style.width='0%';$('tipText').textContent='Observe as cartas com atenção. Tente memorizar as posições dos símbolos!';$('winModal').classList.remove('show');render();updateRecords();
+      first=second=null;locked=false;moves=matched=seconds=0;started=false;timeEl.textContent='00:00';movesEl.textContent='0';pairsEl.innerHTML='0 <small>/ '+count+'</small>';$('accuracy').textContent='100%';$('found').textContent='0%';$('progressBar').style.width='0%';$('tipText').textContent='Observe os rostos e os nomes. As mesmas fotos da galeria aparecem nas cartas e nos pares!';$('winModal').classList.remove('show');render();updateRecords();
     }
     function flip(index,btn){
       if(locked||btn.classList.contains('flipped')||btn.classList.contains('matched'))return;
