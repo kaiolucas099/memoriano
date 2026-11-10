@@ -16,14 +16,28 @@ const shuffle = (items) => {
 
 function PlayerVisual({ player, card = false }) {
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const className = card
     ? 'portrait-wrap' + (player.historic ? ' historic' : '')
     : 'squad-photo';
   return (
     <span className={className}>
-      {player.image && !failed
-        ? <img className={card ? 'player-photo' : undefined} src={player.image} alt={`Foto de ${player.name}`} loading={card ? 'eager' : 'lazy'} decoding="async" onError={() => setFailed(true)} />
-        : <span className={card ? 'portrait-fallback' : 'squad-fallback'}>{player.emoji}</span>}
+      {player.image && !failed ? (
+        <>
+          {!loaded && <span className="image-loading" aria-label={`Carregando imagem de ${player.name}`}>⚽</span>}
+          <img
+            className={(card ? 'player-photo' : '') + (loaded ? ' image-loaded' : ' image-pending')}
+            src={player.image}
+            alt={`Foto de ${player.name}`}
+            loading="eager"
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            onError={() => setFailed(true)}
+          />
+        </>
+      ) : (
+        <span className={card ? 'portrait-fallback' : 'squad-fallback'}>{player.emoji}</span>
+      )}
     </span>
   );
 }
