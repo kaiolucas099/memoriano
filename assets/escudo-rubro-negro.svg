@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 260" role="img" aria-label="Escudo rubro-negro">
+  <defs>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4a4a"/><stop offset="1" stop-color="#a90012"/></linearGradient>
+    <clipPath id="shield"><path d="M24 24H196V145C196 190 160 220 110 244C60 220 24 190 24 145Z"/></clipPath>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path d="M15 15H205V145C205 198 165 231 110 254C55 231 15 198 15 145Z" fill="#050505" stroke="#f5222b" stroke-width="7"/>
+  <g clip-path="url(#shield)">
+    <path fill="#090909" d="M24 24H196V244H24Z"/>
+    <path fill="#e50919" d="M24 60H196V88H24ZM24 116H196V144H24ZM24 172H196V200H24Z"/>
+    <path fill="#ed101c" d="M24 24H68V244H24Z"/>
+  </g>
+  <path d="M24 24H196V145C196 190 160 220 110 244C60 220 24 190 24 145Z" fill="none" stroke="#f4d7d7" stroke-width="3"/>
+  <path d="M49 83L110 53L171 83L160 130L110 155L60 130Z" fill="#090909" stroke="url(#shine)" stroke-width="4" filter="url(#glow)"/>
+  <text x="110" y="117" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-weight="bold" font-size="48" letter-spacing="-7">CRF</text>
+  <path d="M78 179H142" stroke="#f7f0e8" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+  <path d="M87 191H133" stroke="#f7f0e8" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+</svg>
