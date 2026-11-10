@@ -1,0 +1,9 @@
+{
+  "name": "memoriano",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jogo da memória rubro-negro em HTML, CSS e JavaScript puro",
+  "scripts": {
+    "build": "node build.js"
+  }
+}
