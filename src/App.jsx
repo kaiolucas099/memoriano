@@ -272,7 +272,6 @@ export default function App({ user, onLogout }) {
               <span>O vídeo reinicia a cada novo par. Se a reprodução automática for bloqueada, aperte play.</span>
             </div>
           )}
-          </div>
         </section>
 
         <aside className="side-panel">
